@@ -1,4 +1,4 @@
-// node init.js 0x79dE83Ab9493Ef3e206d5B05EAA8bD9216261749 0x0aef75d8710e366b93e1198abaab644702e05c99766e076eeaf156addc233dd8 2
+// Command: TELEGRAM_TOKEN=<you-tg-token> TELEGRAM_CHAT_ID=<tg-chat-id>  node index.js <your-address> <current-salt> <difficulty>
 
 const { spawn } = require("child_process");
 
@@ -51,7 +51,8 @@ async function sendMessageOnTelegram(text) {
         }),
       }
     );
-    const data = await response.json();
+
+    await response.json();
   } catch (error) {
     console.error("Error sending message", error);
   }
